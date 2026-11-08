@@ -188,12 +188,14 @@
 		"name": "Mughal Fort",
 		"replaces": "Castle",
 		"uniqueTo": "India",
+		"cost": 150, // Intentionally cheaper than the Castle's 160
 		"hurryCostModifier": 25,
 		"cityHealth" : 25,
 		"cityStrength" : 7,
 		"culture" : 2,
 		"uniques": [
-			"Provides [2] [Tourism] <after discovering [Flight]>"
+			"Provides [2] [Tourism] <after discovering [Flight]>",
+			"Destroyed when the city is captured"
 		],
 		"requiredBuilding": "Walls",
 		"requiredTech": "Chivalry"
@@ -382,8 +384,8 @@
         "specialistSlots": {"Merchant": 1},
         "hurryCostModifier": 15,
         "uniques": [
-			"[+5]% [Production] from City-States", // TODO: +5% Production per City-State trade route in the empire
-			"[+1 Gold] from each Trade Route" // TODO: +1 Gold per incoming trade route, +1 for the foreign owner
+			"[+5]% [Production] [in this city]", // TODO: +5% Production per City-State trade route in the empire
+			// TODO: +1 Gold per incoming trade route, +1 for the foreign owner
 		],
 		"requiredBuilding": "Market",
 		"requiredTech": "Banking"
@@ -445,7 +447,8 @@
 		"isWonder": true,
 		"uniques": [
 			// TODO: Trade routes other players make to this city will generate an extra 2 Gold for the city owner.
-			"[+1 Gold] from each Trade Route <in this city>", // ... and the trade route owner gains an additional 1 Gold for the trade route
+			// TODO: [+1 Gold] from each Trade Route in this city; and the trade route owner gains an additional 1 Gold for the trade route.
+			"[+5 Gold] [in this city] <after discovering [Navigation]>",
 			"Must be next to [Coast]",
 			"[+1 Gold] from [Water] tiles [in this city]",
 			"Instantly provides [1] [Trade Route]",
@@ -467,18 +470,6 @@
 			"[+2 Gold] from [Stone] tiles [in this city]"
 		],
 		"quote": "'The whole earth is the tomb of heroic men and their story is not given only on stone over their clay but abides everywhere without visible symbol woven into the stuff of other men's lives.' - Pericles"
-	},
-	{
-		"name": "Temple of Artemis",
-		"culture": 1,
-		"greatPersonPoints": {"Great Engineer": 1},
-		"isWonder": true,
-		"requiredTech": "Archery",
-		"uniques": [
-			"[+10]% growth [in your cities]",
-			"[+15]% Production when constructing [Archery] units [in this city]"
-		],
-		"quote": "'It is not so much for its beauty that the forest makes a claim upon men's hearts, as for that subtle something, that quality of the air, that emanation from the old trees, that so wonderfully changes and renews a weary spirit.' - Robert Louis Stevenson"
 	},
 	{
 		"name": "Hanging Gardens",
@@ -1167,12 +1158,12 @@
 	{
         "name": "East India Company",
         "cost": 125,
-        "gold": 4,
+        "gold": 2,
         "isNationalWonder": true,
 		"requiredBuilding": "Market",
         "uniques": [
 			// Trade Routes with other players made to a city with an East India Company will generate an extra 4 Gold for the city owner.
-			"[+2 Gold] from each Trade Route <in this city>", // ... and the Trade Route owner gains an additional 2 Gold for the Trade Route.
+			"[+1 Gold] from each Trade Route", // ... and the Trade Route owner gains an additional 2 Gold for the Trade Route.
             "Cost increases by [30] per owned city"
 		],
         "requiredTech": "Guilds"
